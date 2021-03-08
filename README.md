@@ -59,7 +59,11 @@ http://localhost:8080/Tableaux
 * Cards:
 http://localhost:8080/Fiches
 
- 
+
+# Part 2 of this project:
+
+* You can find the part 2 of this project in the following link :
+https://github.com/KarlaRosas/SIR__TP5_P2_JaxRSOpenAPI
 
    
 # **Authors**
