@@ -70,5 +70,6 @@ https://github.com/KarlaRosas/SIR__TP5_P2_JaxRSOpenAPI
 * Karla ROSAS 
 * Rabeaa KESSAL
 * Léo VARIERAS
+* Olivier BARAIS
 
 
