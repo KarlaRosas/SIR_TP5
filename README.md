@@ -2,7 +2,7 @@
 
 **Application of Kanban Board**
  
-**Prerequisites for Users**
+# **Prerequisites for Users**
 
 JRE >= 1.8
 * java IDE (Eclispe,Intelliji Idea etc..)
@@ -10,7 +10,7 @@ JRE >= 1.8
 * Database phpmyadmin
 * Jetty Server  HTTP
 
-**Getting Started**
+# **Getting Started**
 
 1. Clone https://github.com/KarlaRosas/SIR_TP5.git  for development and testing purposes.
 2. Start WAMP server and database
@@ -20,14 +20,14 @@ JRE >= 1.8
     * Verify that the 'create' parameter is enabled: property name="hibernate.hbm2ddl.auto" value="create"
     
 4. Jetty Server Configuration in IntelliJ
-        * File -> Setting -> Plugins -> Install IDEA Jetty Runner
-        * File -> Setting -> Plugins -> Install Maven Runner
-        * Run  -> Run/Debug Configurations -> New Maven Name 'Jetty' -> Commande line: jetty:run
-        * Run  -> Run/Debug Configurations -> Runner -> WM Options: -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8081
+    * File -> Setting -> Plugins -> Install IDEA Jetty Runner
+    * File -> Setting -> Plugins -> Install Maven Runner
+    * Run  -> Run/Debug Configurations -> New Maven Name 'Jetty' -> Commande line: jetty:run
+    * Run  -> Run/Debug Configurations -> Runner -> WM Options: -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8081
         
     
     
-**How it works**
+# **How it works**
 
 1. Run the JpaTest file
 2. View the creation and population of the database
