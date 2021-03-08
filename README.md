@@ -36,7 +36,7 @@ JRE >= 1.8
 4. Run Server Jetty
 5. Test the urls in your internet browser:
 
-#URLS
+# URLS
 
 * Add a user to the MySQL database:
 http://localhost:8080/myformutilisateur.html
@@ -48,7 +48,7 @@ http://localhost:8080/myformtableau.html
 * Add a card to the Backend table in the "To do B" section in DB MySQL:
 http://localhost:8080/myformfiche.html
 
-#Returns information from the database:
+# Returns information from the database:
 
 *Users
 http://localhost:8080/Utilisateurs
