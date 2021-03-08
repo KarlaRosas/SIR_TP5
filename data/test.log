@@ -1,281 +1,9 @@
-/*C4*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Tableau CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
-INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
-INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
-INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 7
-COMMIT
-DISCONNECT
-/*C5*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Tableau CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Tableau (utilisateurs_id bigint not null, tableaux_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
-alter table Utilisateur_Tableau add constraint FKdugn86fqt3hmjdruu1pwq3s7w foreign key (tableaux_id) references Tableau
-alter table Utilisateur_Tableau add constraint FKn771q26ixhx25vl0twfdqik6l foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
-INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
-INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
-INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 7
-COMMIT
-DISCONNECT
-/*C6*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Tableau CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Tableau (utilisateurs_id bigint not null, tableaux_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
-alter table Utilisateur_Tableau add constraint FKdugn86fqt3hmjdruu1pwq3s7w foreign key (tableaux_id) references Tableau
-alter table Utilisateur_Tableau add constraint FKn771q26ixhx25vl0twfdqik6l foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
-INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
-INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
-INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
-INSERT INTO UTILISATEUR VALUES(7,'user1')
-INSERT INTO UTILISATEUR VALUES(8,'user2')
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 9
-COMMIT
-DISCONNECT
 /*C8*/SET SCHEMA PUBLIC
 drop table if exists Department CASCADE 
 drop table if exists Employee CASCADE 
 drop table if exists Fiche CASCADE 
 drop table if exists Section CASCADE 
 drop table if exists Tableau CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Tableau CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Tableau (utilisateurs_id bigint not null, tableaux_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Utilisateur_Tableau add constraint FKdugn86fqt3hmjdruu1pwq3s7w foreign key (tableaux_id) references Tableau
-alter table Utilisateur_Tableau add constraint FKn771q26ixhx25vl0twfdqik6l foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
-INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
-INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
-INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
-INSERT INTO UTILISATEUR VALUES(7,'user1')
-INSERT INTO UTILISATEUR VALUES(8,'user2')
-INSERT INTO SECTION VALUES(9,'section1',1)
-INSERT INTO SECTION VALUES(10,'section2',2)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
-COMMIT
-DISCONNECT
-/*C7*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C10*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Tableau CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Tableau (utilisateurs_id bigint not null, tableaux_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Tableau add constraint FKdugn86fqt3hmjdruu1pwq3s7w foreign key (tableaux_id) references Tableau
-alter table Utilisateur_Tableau add constraint FKn771q26ixhx25vl0twfdqik6l foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
-INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
-INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
-INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
-INSERT INTO UTILISATEUR VALUES(7,'user1')
-INSERT INTO UTILISATEUR VALUES(8,'user2')
-INSERT INTO SECTION VALUES(9,'section1',1)
-INSERT INTO SECTION VALUES(10,'section2',2)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
-COMMIT
-DISCONNECT
-/*C3*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C12*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Fiche_Utilisateur CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Fiche CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
-create table Fiche_Utilisateur (Fiche_id bigint not null, utilisateurs_id bigint not null)
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Fiche (Utilisateur_id bigint not null, fiches_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
-alter table Fiche_Utilisateur add constraint FK5uag1s8t75aeheqtt3be58ldj foreign key (utilisateurs_id) references Utilisateur
-alter table Fiche_Utilisateur add constraint FK1nvahf2f5jkwdr62054iw1u2d foreign key (Fiche_id) references Fiche
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
-alter table Utilisateur_Fiche add constraint FKj81mim2tj03a6ntquutc401hq foreign key (Utilisateur_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'Jakab Gipsz',NULL)
-INSERT INTO FICHE VALUES(4,'Captain Nemo',NULL)
-INSERT INTO FICHE VALUES(5,'Bon Toronja',NULL)
-INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',NULL)
-INSERT INTO UTILISATEUR VALUES(7,'user1')
-INSERT INTO UTILISATEUR VALUES(8,'user2')
-INSERT INTO SECTION VALUES(9,'section1',1)
-INSERT INTO SECTION VALUES(10,'section2',2)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
-COMMIT
-DISCONNECT
-/*C13*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Fiche_Utilisateur CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Fiche CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
-create table Fiche_Utilisateur (Fiche_id bigint not null, utilisateurs_id bigint not null)
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Fiche (Utilisateur_id bigint not null, fiches_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
-alter table Fiche_Utilisateur add constraint FK5uag1s8t75aeheqtt3be58ldj foreign key (utilisateurs_id) references Utilisateur
-alter table Fiche_Utilisateur add constraint FK1nvahf2f5jkwdr62054iw1u2d foreign key (Fiche_id) references Fiche
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
-alter table Utilisateur_Fiche add constraint FKj81mim2tj03a6ntquutc401hq foreign key (Utilisateur_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'Jakab Gipsz',NULL)
-INSERT INTO FICHE VALUES(4,'Captain Nemo',NULL)
-INSERT INTO FICHE VALUES(5,'Bon Toronja',NULL)
-INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',NULL)
-INSERT INTO UTILISATEUR VALUES(7,'user1')
-INSERT INTO UTILISATEUR VALUES(8,'user2')
-INSERT INTO SECTION VALUES(9,'section1',1)
-INSERT INTO SECTION VALUES(10,'section2',2)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
-COMMIT
-DISCONNECT
-/*C14*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Fiche_Utilisateur CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Fiche CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
-create table Fiche_Utilisateur (Fiche_id bigint not null, utilisateurs_id bigint not null)
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Fiche (Utilisateur_id bigint not null, fiches_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
-alter table Fiche_Utilisateur add constraint FK5uag1s8t75aeheqtt3be58ldj foreign key (utilisateurs_id) references Utilisateur
-alter table Fiche_Utilisateur add constraint FK1nvahf2f5jkwdr62054iw1u2d foreign key (Fiche_id) references Fiche
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
-alter table Utilisateur_Fiche add constraint FKj81mim2tj03a6ntquutc401hq foreign key (Utilisateur_id) references Utilisateur
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
-DISCONNECT
-/*C16*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
 drop table if exists Tars CASCADE 
 drop table if exists Utilisateur CASCADE 
 drop table if exists Utilisateur_Fiche CASCADE 
@@ -303,220 +31,7 @@ INSERT INTO SECTION VALUES(5,'section',NULL)
 INSERT INTO FICHE VALUES(6,'Jakab Gipsz',5)
 INSERT INTO FICHE VALUES(7,'Captain Nemo',5)
 INSERT INTO FICHE VALUES(8,'Bon Toronja',5)
-INSERT INTO FICHE VALUES(9,'Bebecito bebeLean',5)
-INSERT INTO SECTION VALUES(10,'section1',1)
-INSERT INTO SECTION VALUES(11,'section2',2)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 12
-COMMIT
-DISCONNECT
-/*C17*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Fiche CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Fiche (utilisateurs_id bigint not null, fiches_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK91ksc4g6u8t6snupc5hgyk5vv foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'fiche1',NULL)
-INSERT INTO FICHE VALUES(4,'fiche2',NULL)
-INSERT INTO SECTION VALUES(5,'section',NULL)
-INSERT INTO FICHE VALUES(6,'Jakab Gipsz',5)
-INSERT INTO FICHE VALUES(7,'Captain Nemo',5)
-INSERT INTO FICHE VALUES(8,'Bon Toronja',5)
-INSERT INTO FICHE VALUES(9,'Bebecito bebeLean',5)
-INSERT INTO SECTION VALUES(10,'section1',1)
-INSERT INTO SECTION VALUES(11,'section2',2)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 12
-COMMIT
-DISCONNECT
-/*C19*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Fiche CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Fiche (utilisateurs_id bigint not null, fiches_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK91ksc4g6u8t6snupc5hgyk5vv foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'fiche1',NULL)
-INSERT INTO FICHE VALUES(4,'fiche2',NULL)
-INSERT INTO SECTION VALUES(5,'section',NULL)
-INSERT INTO FICHE VALUES(6,'Jakab Gipsz',5)
-INSERT INTO FICHE VALUES(7,'Captain Nemo',5)
-INSERT INTO FICHE VALUES(8,'Bon Toronja',5)
-INSERT INTO FICHE VALUES(9,'Bebecito bebeLean',5)
-INSERT INTO SECTION VALUES(10,'section1',1)
-INSERT INTO SECTION VALUES(11,'section2',2)
-DELETE FROM FICHE WHERE ID=3
-INSERT INTO FICHE VALUES(3,'fiche1',5)
-DELETE FROM FICHE WHERE ID=4
-INSERT INTO FICHE VALUES(4,'fiche2',5)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 12
-COMMIT
-DISCONNECT
-/*C21*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Fiche CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Fiche (utilisateurs_id bigint not null, fiches_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK91ksc4g6u8t6snupc5hgyk5vv foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'fiche1',NULL)
-INSERT INTO FICHE VALUES(4,'fiche2',NULL)
-INSERT INTO SECTION VALUES(5,'section',NULL)
-INSERT INTO FICHE VALUES(6,'Jakab Gipsz',5)
-INSERT INTO FICHE VALUES(7,'Captain Nemo',5)
-INSERT INTO FICHE VALUES(8,'Bon Toronja',5)
-INSERT INTO FICHE VALUES(9,'Bebecito bebeLean',5)
-INSERT INTO UTILISATEUR VALUES(10,'user1')
-INSERT INTO UTILISATEUR VALUES(11,'user2')
-INSERT INTO SECTION VALUES(12,'section1',1)
-INSERT INTO SECTION VALUES(13,'section2',2)
-DELETE FROM FICHE WHERE ID=3
-INSERT INTO FICHE VALUES(3,'fiche1',5)
-DELETE FROM FICHE WHERE ID=4
-INSERT INTO FICHE VALUES(4,'fiche2',5)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 14
-COMMIT
-DISCONNECT
-/*C23*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Fiche CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Fiche (utilisateurs_id bigint not null, fiches_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK91ksc4g6u8t6snupc5hgyk5vv foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'fiche1',NULL)
-INSERT INTO FICHE VALUES(4,'fiche2',NULL)
-INSERT INTO SECTION VALUES(5,'section',NULL)
-INSERT INTO FICHE VALUES(6,'Jakab Gipsz',5)
-INSERT INTO FICHE VALUES(7,'Captain Nemo',5)
-INSERT INTO FICHE VALUES(8,'Bon Toronja',5)
-INSERT INTO FICHE VALUES(9,'Bebecito bebeLean',5)
-INSERT INTO UTILISATEUR VALUES(10,'user1')
-INSERT INTO UTILISATEUR VALUES(11,'user2')
-INSERT INTO SECTION VALUES(12,'section1',1)
-INSERT INTO SECTION VALUES(13,'section2',2)
-DELETE FROM FICHE WHERE ID=3
-INSERT INTO FICHE VALUES(3,'fiche1',5)
-DELETE FROM FICHE WHERE ID=4
-INSERT INTO FICHE VALUES(4,'fiche2',5)
-INSERT INTO UTILISATEUR_FICHE VALUES(10,3)
-INSERT INTO UTILISATEUR_FICHE VALUES(11,4)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 14
-COMMIT
-DISCONNECT
-/*C25*/SET SCHEMA PUBLIC
-drop table if exists Department CASCADE 
-drop table if exists Employee CASCADE 
-drop table if exists Fiche CASCADE 
-drop table if exists Section CASCADE 
-drop table if exists Tableau CASCADE 
-drop table if exists Tars CASCADE 
-drop table if exists Utilisateur CASCADE 
-drop table if exists Utilisateur_Fiche CASCADE 
-drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table Department (id bigint not null, name varchar(255), primary key (id))
-create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
-create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
-create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
-create table Tableau (id bigint not null, name varchar(255), primary key (id))
-create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
-create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
-create table Utilisateur_Fiche (utilisateurs_id bigint not null, fiches_id bigint not null)
-alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
-alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
-alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
-alter table Utilisateur_Fiche add constraint FK91ksc4g6u8t6snupc5hgyk5vv foreign key (utilisateurs_id) references Utilisateur
-INSERT INTO TABLEAU VALUES(1,'tab1')
-INSERT INTO TABLEAU VALUES(2,'tab2')
-INSERT INTO FICHE VALUES(3,'fiche1',NULL)
-INSERT INTO FICHE VALUES(4,'fiche2',NULL)
-INSERT INTO SECTION VALUES(5,'section',NULL)
-INSERT INTO FICHE VALUES(6,'Jakab Gipsz',5)
-INSERT INTO FICHE VALUES(7,'Captain Nemo',5)
-INSERT INTO FICHE VALUES(8,'Bon Toronja',5)
-INSERT INTO FICHE VALUES(9,'Bebecito bebeLean',5)
+INSERT INTO FICHE VALUES(9,'Leonardo Dicaprio',5)
 INSERT INTO UTILISATEUR VALUES(10,'user1')
 INSERT INTO UTILISATEUR VALUES(11,'user2')
 INSERT INTO SECTION VALUES(12,'section1',1)
@@ -531,4 +46,55 @@ INSERT INTO UTILISATEUR_FICHE VALUES(10,3)
 INSERT INTO UTILISATEUR_FICHE VALUES(11,4)
 ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 16
 COMMIT
+DISCONNECT
+/*C9*/SET SCHEMA PUBLIC
+drop table if exists Department CASCADE 
+drop table if exists Employee CASCADE 
+drop table if exists Fiche CASCADE 
+drop table if exists Section CASCADE 
+drop table if exists Tableau CASCADE 
+drop table if exists Tars CASCADE 
+drop table if exists Utilisateur CASCADE 
+drop table if exists Utilisateur_Fiche CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Department (id bigint not null, name varchar(255), primary key (id))
+create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
+create table Fiche (id bigint not null, name varchar(255), section_id bigint, primary key (id))
+create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
+create table Tableau (id bigint not null, name varchar(255), primary key (id))
+create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
+create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
+create table Utilisateur_Fiche (utilisateurs_id bigint not null, fiches_id bigint not null)
+alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
+alter table Fiche add constraint FKhku82603voqbyxsomrlihpeuq foreign key (section_id) references Section
+alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
+alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
+alter table Utilisateur_Fiche add constraint FK2o703i9h90u055lv1a5b6xc4t foreign key (fiches_id) references Fiche
+alter table Utilisateur_Fiche add constraint FK91ksc4g6u8t6snupc5hgyk5vv foreign key (utilisateurs_id) references Utilisateur
+INSERT INTO TABLEAU VALUES(1,'tab1')
+INSERT INTO TABLEAU VALUES(2,'tab2')
+INSERT INTO FICHE VALUES(3,'fiche1',NULL)
+INSERT INTO FICHE VALUES(4,'fiche2',NULL)
+INSERT INTO SECTION VALUES(5,'section',NULL)
+INSERT INTO FICHE VALUES(6,'Jakab Gipsz',5)
+INSERT INTO FICHE VALUES(7,'Thibault Michaud',5)
+INSERT INTO FICHE VALUES(8,'Bon Toronja',5)
+INSERT INTO FICHE VALUES(9,'Leonardo Dicaprio',5)
+INSERT INTO UTILISATEUR VALUES(10,'user1')
+INSERT INTO UTILISATEUR VALUES(11,'user2')
+INSERT INTO SECTION VALUES(12,'section1',1)
+INSERT INTO SECTION VALUES(13,'section2',2)
+INSERT INTO TARS VALUES(14,'tars1',3)
+INSERT INTO TARS VALUES(15,'tars2',4)
+DELETE FROM FICHE WHERE ID=3
+INSERT INTO FICHE VALUES(3,'fiche1',5)
+DELETE FROM FICHE WHERE ID=4
+INSERT INTO FICHE VALUES(4,'fiche2',5)
+INSERT INTO UTILISATEUR_FICHE VALUES(10,3)
+INSERT INTO UTILISATEUR_FICHE VALUES(11,4)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 16
+COMMIT
+DISCONNECT
+/*C7*/SET SCHEMA PUBLIC
 DISCONNECT

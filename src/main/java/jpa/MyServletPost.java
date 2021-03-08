@@ -1,5 +1,6 @@
 package jpa;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -12,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 
 
-@WebServlet(name="mytest", urlPatterns={"/myurl"})
-public class MyServlet extends HttpServlet {
+@WebServlet(name="mytest2", urlPatterns={"/myurl2"})
+public class MyServletPost extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -23,7 +24,7 @@ public class MyServlet extends HttpServlet {
 
 
 
-    public MyServlet() {
+    public MyServletPost() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +36,7 @@ public class MyServlet extends HttpServlet {
 
         Connection conn = null;
         Statement stmt = null;
-
+        // HTML
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         String title = "Servlet Mysql ";
@@ -52,12 +53,13 @@ public class MyServlet extends HttpServlet {
 
 
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
             stmt = conn.createStatement();
             String sql;
             sql = "SELECT id, name FROM Fiche";
             ResultSet rs = stmt.executeQuery(sql);
 
-
+            out.print("Hello worlds despues de consulta");
 
             while(rs.next()){
                 int id  = rs.getInt("id");
@@ -94,8 +96,6 @@ public class MyServlet extends HttpServlet {
         }
 
     }
-
-
 
 
     @Override
