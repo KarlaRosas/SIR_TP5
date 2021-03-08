@@ -1,9 +1,13 @@
 package jpa;
+import java.sql.Date;
+import java.util.*;
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import domain.*;
 import dao.*;
+
 
 
 public class JpaTest{
@@ -108,6 +112,7 @@ public class JpaTest{
 			Section section5 = new Section("En processus F",tableau2);
 			Section section6 = new Section("Taches finis  F ",tableau2 );
 			//List<Fiche> fiches = new ArrayList<Fiche>();
+
 			Fiche fiche1 = new Fiche("fiche1",section1,"https://www.univ-rennes1.fr/", "Bordeaux", "Faire TP1",60);
 			Fiche fiche2 = new Fiche("fiche2",section2,"https://www.univ-rennes1.fr/", "Marseille", "Faire TP2",60);
 			Fiche fiche3 = new Fiche("fiche3",section3,"https://www.univ-rennes1.fr/", "Lille", "Faire TP3",60);

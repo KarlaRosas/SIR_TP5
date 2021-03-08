@@ -2,6 +2,8 @@
 package domain;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,7 @@ public class Fiche {
     private String url;
     private String lieu;
     private String note;
+    //private Date date;
 
     private Integer tempsMinutes;
 
@@ -23,6 +26,9 @@ public class Fiche {
 
     private List<Tars> tars = new ArrayList<Tars>();
 
+    @Temporal(value=TemporalType.TIMESTAMP)
+    @Column(name="CREATED_TIME")
+    private Date creationTime;
 
     public Fiche() {
     }
@@ -34,6 +40,7 @@ public class Fiche {
         this.url = url;
         this.note =note;
         this.tempsMinutes =tempsMinutes;
+
 
     }
 
@@ -75,7 +82,21 @@ public class Fiche {
         this.lieu = lieu;
     }
 
+    public String getNote() {
+        return note;
+    }
 
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public Date getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(Date creationTime) {
+        this.creationTime = creationTime;
+    }
 
     public Integer getTempsMinutes() {
         return tempsMinutes;
