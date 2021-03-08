@@ -30,8 +30,12 @@ public class FichesInfo extends HttpServlet {
             throws ServletException, IOException {
 
         //Obtenir valeur à ajouter à la BD
-        String nombre =request.getParameter("name");
-
+        String prenom =request.getParameter("name");
+        String url =request.getParameter("url");
+        String lieu =request.getParameter("lieu");
+        String note =request.getParameter("note");
+        String t = request.getParameter("temps");
+        int temps = Integer.parseInt(t);
 
         Connection conn = null;
         Statement stmt = null;
@@ -65,9 +69,10 @@ public class FichesInfo extends HttpServlet {
             while(rs.next()){
                 int id  = rs.getInt("id");
                 int id2 =id+1;
-                stmt.executeUpdate("INSERT INTO `fiche`(`id`, `name`, `section_id`) VALUES ("+id2+",'"+ nombre+"',3)");
-                //stmt.executeUpdate("INSERT INTO `utilisateur`(`id`, `name`) VALUES ("+id2+",'"+ nombre+"')");
-                //INSERT INTO `fiche`(`id`, `name`, `section_id`) VALUES ([value-1],[value-2],[value-3])
+
+                stmt.executeUpdate("INSERT INTO `fiche`(`id`, `lieu`, `name`, `tempsMinutes`, `url`, `section_id`) VALUES ("+id2+",'"+ lieu+"', '"+ prenom+"',"+temps+",'"+url+"', 3)");
+
+
             }
 
 
