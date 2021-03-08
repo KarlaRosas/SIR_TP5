@@ -50,13 +50,13 @@ http://localhost:8080/myformfiche.html
 
 # Returns information from the database:
 
-*Users
+* Users
 http://localhost:8080/Utilisateurs
 
-*Kanban boards
+* Kanban boards
 http://localhost:8080/Tableaux
 
-Cards:
+* Cards:
 http://localhost:8080/Fiches
 
  
